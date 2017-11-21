@@ -28,7 +28,7 @@ Since the Docker build process integrated with the Maven build process and it bi
 
 #### Authenticating with maven settings.xml
 
-Since version 1.3.6, private registry authentication can be done using maven settings.xml instead of docker configuration. This is configured in the `pom.xml` with the following:
+Since version `1.3.0` (we use the latest `1.3.6` version in this project), private registry authentication can be done using maven `settings.xml` instead of docker configuration in `~/.dockercfg` or `~/.docker/config.json` file when pulling, pushing, or building images to private registries. This is configured in the `pom.xml` with the following:
 ```
 <configuration>
   <serverId>${docker.image.prefix}</serverId>
@@ -38,6 +38,7 @@ Since version 1.3.6, private registry authentication can be done using maven set
   <tag>${project.version}</tag>
 </configuration>
 ```
+
 Here we provide the `serverId` and `registryUrl` also set `useMavenSettingsForAuth` tag value to `true`. This allows the maven docker plugin to read authentication information like `usename` and `password` from the maven `settings.xml` file.
 
 Then, in the maven settings file, add configuration for the server:
