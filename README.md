@@ -38,7 +38,7 @@ Then, in the maven settings file, add configuration for the server:
 ```
 <servers>
   <server>
-    <id>registryName.example.com:8080</id>
+    <id>registryName.example.com</id>
       <username>myUserName</username>
       <password>myPassword</password>
   </server>
