@@ -1,6 +1,6 @@
 # docker-maven-sample
 
-This is simple spring boot application that is dockerized with maven docker build plugin.
+This is a simple spring boot application that is dockerized with maven docker build plugin.
 
 It uses the following `Dockerfile`
 ```
@@ -15,7 +15,7 @@ ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urando
 ## Build and Push Image
 Since the Docker build process integrated with the Maven build process and it binds the default phases, we can type `mvn package` and get a Docker image. When use `mvn deploy`, the image gets pushed to the registry. Also we can just say `mvn dockerfile:build dockerfile:push` to build and push the image to the registry.
 
-## The sample demonstrates the following two features
+## This sample demonstrates the following two features
 
 ### Authentication with private Docker registry
 
@@ -56,5 +56,7 @@ Since in most cases our jar file name would change form build to build i.e. addi
   </buildArgs>
 </configuration>
 ```
+
+The `JAR_FILE_NAME` is referenced in the `Dockerfile` where the value of `JAR_FILE_NAME` is  `${project.build.finalName}.jar`.
 
 The `Dockerfile` argument passing feature comes with the docker client version `8.8.4` that's why we had to override the docker client version in the `dockerfile-maven-plugin` setup within the `plugin` section.
