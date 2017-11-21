@@ -6,7 +6,7 @@ You will need all of the following components to successfully build and run this
 
 | [Java 8](http://java.oracle.com/) | [Maven 3](http://maven.apache.org/) | [Git](https://github.com/) | [Docker](https://www.docker.com/) |
 
-In addition, to push the image to a private registry either have your own registry running somewhere or create a registry in Azure. For that you will need an Azure subscription; if you don't already have an Azure subscription, you can sign up for a [free Azure account](https://azure.microsoft.com/pricing/free-trial/) and deploy your Azure Container Registry.
+In addition, to push the image to a private registry either have your own registry running somewhere or create a registry in Azure. For that you will need an Azure subscription; if you don't already have an Azure subscription, you can sign up for a [free Azure account](https://azure.microsoft.com/pricing/free-trial/) and deploy your Azure Container Registry. The registry references in the `pom.xml` in this project uses an Azure Container Registry.
 
 
 It uses the following `Dockerfile`
